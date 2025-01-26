@@ -1,0 +1,185 @@
+/* https://github.com/TheGlowEk */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#background-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+.login-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+    width: 300px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(-100vh);
+    animation: drop-in 1s ease-out forwards;
+}
+
+@keyframes drop-in {
+    0% {
+        opacity: 0;
+        transform: translateY(-100vh);
+    }
+    70% {
+        opacity: 1;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h2 {
+    margin-bottom: 40px;
+    color: #333;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    text-align: left;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 16px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-image: linear-gradient(rgba(0,123,255,1), rgba(0,100,212,1));
+    color: white;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all .3s ease-out;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    z-index: 10;
+    background-image: linear-gradient(rgba(0,100,212,1), rgba(0,70,170,1));
+    scale: 110%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin-bottom: 20px;
+}
+
+.remember-label {
+    margin-left: 8px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #007BFF;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all .3s ease-out;
+    position: relative;
+    background-color: white;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+input[type="checkbox"]:checked {
+    background-color: #007BFF;
+    border-color: #007BFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+}
+
+input[type="checkbox"]:checked::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+input[type="checkbox"]:hover {
+    scale: 110%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+}
+
+.usr {
+    font-size: 12px;
+}
+
+.pwd {
+    font-size: 12px;
+}
+
+.img_logo {
+    width: 150px;
+    height: 150px;
+}
+
+.forgot-password {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+#loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: none; 
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.spinner {
+    border: 8px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top: 8px solid #fff;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
